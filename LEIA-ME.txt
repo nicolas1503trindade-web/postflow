@@ -1,0 +1,18 @@
+POSTFLOW — PACOTE CONFIGURADO PARA O SUPABASE
+
+A URL e a chave publishable que você enviou já foram inseridas em supabase-config.js.
+
+AINDA FALTA EXECUTAR UMA ETAPA NO PAINEL SUPABASE:
+
+1. Abra https://supabase.com/dashboard e entre no projeto pdmxxfctqnzbymauggxj.
+2. Abra SQL Editor > New query.
+3. Abra o arquivo schema.sql deste pacote, copie todo o conteúdo, cole no SQL Editor e clique em Run. Isso cria a tabela de postagens, ativa RLS e habilita Realtime.
+4. Em Authentication > Users, adicione os funcionários da equipe, um usuário por pessoa, com e-mail e senha. Mantenha o cadastro público desativado para que só pessoas convidadas tenham acesso.
+5. Publique index.html e supabase-config.js juntos no GitHub Pages (na mesma pasta/raiz). O schema.sql e este LEIA-ME podem ficar no repositório, mas não são necessários no navegador.
+6. Abra o site, entre com uma das contas e teste criando uma postagem. Depois entre em outro dispositivo com outra conta da equipe: a postagem deve aparecer nos dois.
+
+IMPORTANTE:
+- A chave incluída é uma chave publishable, apropriada para uso no navegador. Nunca use service_role ou secret key no site.
+- As políticas SQL permitem que qualquer usuário autenticado deste projeto veja, crie, edite e exclua as postagens compartilhadas. Só convide pessoas autorizadas da equipe.
+- O pacote não executa comandos dentro da sua conta Supabase. Você precisa executar schema.sql no SQL Editor e criar/convidar os usuários.
+- Postagens antigas guardadas apenas no navegador não são migradas automaticamente. Exporte o backup da versão antiga antes de trocar.
